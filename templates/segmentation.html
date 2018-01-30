@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        img {
+            border: 1px solid black;
+        }
+    </style>
+
+
+
+<body><div class="container">
+
+    <h1>Test on an image</h1>
+
+      <form  method="POST" action="{{ url_for('segment') }}">
+        <div class="w3-section">
+          <label>Image Path</label>
+          <input class="w3-input w3-border" type="text" name="image_path">
+        </div>
+        <div class="w3-section">
+          <label>Model dir</label>
+          <input class="w3-input w3-border" type="text" name="model_dir">
+        </div>
+        <div class="w3-section">
+          <label>Out</label>
+          <input class="w3-input w3-border" type="text" name="out">
+        </div>
+        <button type="submit" class="w3-button w3-block w3-dark-grey">Test</button>
+      </form><br>
+
+    <img src="{{ url }}" alt="Result" class="w3-image w3-margin-top" width="250" height="250">
+    <img src="{{ url_label }}" alt="label" class="w3-image w3-margin-top" width="250" height="250">
+    <img src="{{ url_origin }}" alt="Original" class="w3-image w3-margin-top" width="250" height="250">
+  </div>
+</body>

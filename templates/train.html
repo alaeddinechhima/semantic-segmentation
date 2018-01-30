@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        img {
+            border: 1px solid black;
+        }
+    </style>
+
+
+
+<body><div class="container">
+
+    <h1>Train your model</h1>
+
+      <form  method="POST" action="{{ url_for('train') }}">
+        <div class="w3-section">
+          <label>Directory path for the dataset</label>
+          <input class="w3-input w3-border" type="text" name="dir_path">
+        </div>
+        <div class="w3-section">
+          <label>Save</label>
+          <input class="w3-input w3-border" type="text" name="save">
+        </div>
+        <button type="submit" class="w3-button w3-block w3-dark-grey">Train</button>
+      </form><br>
+  </div>
+</body>
