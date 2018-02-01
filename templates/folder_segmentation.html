@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body><div class="container">
+
+    <h1>Test on an image</h1>
+
+      <form  method="POST" action="{{ url_for('folder_segmentation') }}">
+        <div class="w3-section">
+          <label>Path</label>
+          <input class="w3-input w3-border" type="text" name="folder_path">
+        </div>
+        <div class="w3-section">
+          <label>Model dir</label>
+          <input class="w3-input w3-border" type="text" name="model_dir">
+        </div>
+        <div class="w3-section">
+          <label>Out</label>
+          <input class="w3-input w3-border" type="text" name="out">
+        </div>
+        <button type="submit" class="w3-button w3-block w3-dark-grey">Test</button>
+      </form><br>
+
+
+  </div>
+</body>

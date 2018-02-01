@@ -10,23 +10,9 @@ import cv2
 from scipy import ndimage
 import matplotlib.pyplot as plt
 
-def image_segmentation(input_image,model_dir,out):
+def image_segmentation(input_image,model_dir,out,network):
 
-    layers = []
-    layers.append(Conv2d(kernel_size=7, strides=[1, 2, 2, 1], output_channels=64, name='conv_1_1'))
-    layers.append(Conv2d(kernel_size=7, strides=[1, 1, 1, 1], output_channels=64, name='conv_1_2'))
-    layers.append(MaxPool2d(kernel_size=2, name='max_1', skip_connection=True))
-
-    layers.append(Conv2d(kernel_size=7, strides=[1, 2, 2, 1], output_channels=64, name='conv_2_1'))
-    layers.append(Conv2d(kernel_size=7, strides=[1, 1, 1, 1], output_channels=64, name='conv_2_2'))
-    layers.append(MaxPool2d(kernel_size=2, name='max_2', skip_connection=True))
-
-    layers.append(Conv2d(kernel_size=7, strides=[1, 2, 2, 1], output_channels=64, name='conv_3_1'))
-    layers.append(Conv2d(kernel_size=7, strides=[1, 1, 1, 1], output_channels=64, name='conv_3_2'))
-    layers.append(MaxPool2d(kernel_size=2, name='max_3'))
-
-
-    network = convolutional_autoencoder.Network(layers)
+    
 
     checkpoint = model_dir
 
