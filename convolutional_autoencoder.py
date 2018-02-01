@@ -201,15 +201,13 @@ def draw_results(test_inputs, test_targets, test_segmentation, test_accuracy, ne
     return buf
 
 
-def train_model(data_path):
+def train_model(data_path,save,network):
     BATCH_SIZE = 100
-
-    network = Network()
 
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
     # create directory for saving models
-    os.makedirs(os.path.join('save', network.description, timestamp))
+    os.makedirs(os.path.join(save, network.description, timestamp))
 
     dataset = Dataset(BATCH_SIZE, data_path)
 

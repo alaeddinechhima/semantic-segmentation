@@ -44,10 +44,8 @@ def segment():
 def train():
     dir_path = request.form.get('dir_path')
     save = request.form.get('save')
-    image_segmentation(str(image_path),str(model_dir),str(out))
-    train_model(dir_path)
-    url_label=image_path.split("inputs")[0]+"targets/"+name[len(name)-10:]+".png"
-    return  render_template('segmentation.html',url=url,url_origin=url_origin,url_label=url_label)
+    train_model(dir_path,save,network)
+    return  render_template('train.html')
 
 
 
